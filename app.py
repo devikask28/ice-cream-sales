@@ -24,8 +24,8 @@ URL = "https://api.open-meteo.com/v1/forecast"
 with open("model.pkl", "rb") as f:
     model = pickle.load(f)
 
-st.set_page_config(page_title="Ice Cream Sales Predictor", page_icon="🍨")
-st.title("🍨 Ice Cream Sales Predictor")
+st.set_page_config(page_title="Ice Cream Sales Predictor", page_icon="🍧")
+st.title("🍧🍦🍨 Ice Cream Sales Predictor")
 st.caption("Pick a city and a date. The app gets the weather forecast and predicts how many cones you will sell based on various weather conditions like temperature, rainfall, and humidity.")
 
 city = st.selectbox("City", list(CITIES))
