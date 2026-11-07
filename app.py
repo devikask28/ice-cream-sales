@@ -15,7 +15,7 @@ CITIES = {
     "Los Angeles": (34.05, -118.24),
     "San Francisco": (37.77, -122.42)
 }
-LOW_TEMP, HIGH_TEMP = 50, 100        # the temperatures (F) the model learned from
+LOW_TEMP, HIGH_TEMP = 30, 100        # the temperatures (F) the model learned from
 LOW_SALES, HIGH_SALES = 200, 300     # below LOW_SALES is a slow day, above HIGH_SALES is a busy one
 URL = "https://api.open-meteo.com/v1/forecast"
 # ------------------------------------------------------------------------
@@ -66,10 +66,10 @@ if st.button("Predict sales", type="primary"):
 
     # 3. Show the result
     col1, col2, col3, col4 = st.columns(4)
-    col1.metric("Forecast high", f"{temperature:.0f} °F")
-    col2.metric("Forecast rainfall", f"{rainfall:.1f} mm")
-    col3.metric("Forecast humidity", f"{humidity:.0f}%")
-    col4.metric("Predicted sales", f"{prediction:.0f} cones")
+    col1.metric("Forecast Temperature", f"{temperature:.0f} °F")
+    col2.metric("Rainfall Amount", f"{rainfall:.1f} mm")
+    col3.metric("Humidity", f"{humidity:.0f}%")
+    col4.metric("Predicted Sales", f"{prediction:.0f} cones")
 
     if temperature < LOW_TEMP or temperature > HIGH_TEMP:
         st.warning(f"This temperature is outside the range the model learned from ({LOW_TEMP} to {HIGH_TEMP} °F). "
